@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/stylesheets/login.css">
+</head>
+<body>
+<div id="fullscreen_bg" class="fullscreen_bg"/>
+<div class="container">
+
+    <form class="form-signin" method="POST" action="/login">
+        
+        <h1 class="form-signin-heading text-muted">Sign In</h1>
+        
+
+        <% if (typeof message == "string" && message.length > 0) { %>
+        <div class="alert alert-danger col-sm-12"><%= message %></div>
+        <% } %>
+
+
+        <% if (messages.error) { %>
+        <div class="alert alert-danger col-sm-12"><%- messages.error %></div>
+        <% } %>
+
+        <input type="text" class="form-control" placeholder="Username" name="user" required="" autofocus="">
+        <input type="password" class="form-control" placeholder="Password" name="pass" required="">
+                                        <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+        <center><a href="/users/register" class="btn btn-default">Register Here</a></center>
+        <br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">
+            Sign In
+        </button>
+    </form>
+
+</div>
+</body>
+</html>

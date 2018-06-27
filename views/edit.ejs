@@ -1,0 +1,49 @@
+<%- include header/header.ejs %>
+<div class="container">
+	<div class="row">
+	<form class="form-horizontal" method="POST" action="/users/edit/<%=id%>">
+<fieldset>
+
+ <% if (typeof message == "string" && message.length > 0) { %>
+                                <div id="signupalert" class="alert alert-danger">
+                                    <p><%= message %></p>
+                                    <span></span>
+                                </div>
+                                <% } %>
+<!-- Form Name -->
+<legend><center>Ubah Data!</center></legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="name">Email</label>  
+  <div class="col-md-8">
+  <input id="name" name="email" type="text" placeholder="email" class="form-control input-md" value="<%= email %>">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="email">Username</label>  
+  <div class="col-md-8">
+  <input id="email" name="user" type="text" placeholder="Email" class="form-control input-md" value="<%= username %>">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+ <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="reg"></label>
+  <div class="col-md-8">
+    <button id="reg" name="reg" class="btn btn-primary">Edit!</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+	</div>
+</div>
+<%- include header/footer.ejs %>
