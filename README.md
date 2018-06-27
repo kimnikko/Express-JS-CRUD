@@ -1,6 +1,7 @@
-<<<<<<< HEAD
-# ExpressJS-CRUD
-ExpressJS CRUD
-=======
-# app
->>>>>>> ExpressJS CRUD
+Express JS CRUD with Mysql.
+
+Fitur Login Logout Edit Delete Read
+
+```npm install```
+
+```nodemon app.js```
